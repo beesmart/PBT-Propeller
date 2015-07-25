@@ -1,0 +1,20 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Fonts
+
+******************************************************************/
+
+ @font-face {
+      font-family: 'Calluna-Regular';
+      src: url('/fonts/Calluna-Regular.otf') format("opentype");
+      font-weight: normal;
+      font-style: normal;
+  }
+
+// font stacks
+$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$Montserrat:        "Montserrat", $sans-serif;
+$Calluna:           "Calluna-Regular", $serif;
