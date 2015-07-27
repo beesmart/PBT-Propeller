@@ -1,0 +1,459 @@
+/******************************************************************
+Site Name: PBT
+Author: Stephen C.
+
+Stylesheet: Base Mobile Stylesheet
+
+This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+
+/*********************
+HEADER
+*********************/
+
+#main-header {
+	background: repeating-linear-gradient(
+  -45deg,
+  rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.6) 2px,
+  rgba(0, 0, 0, 0.6) 2px,
+  rgba(0, 0, 0, 0.6) 3px
+	),
+	url('../images/background-head.jpg');
+	
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	min-height: 891px;
+	width: 100%;
+    float: left;
+		
+	#logo {
+		text-align: center;
+		margin-top: 156px;
+	}
+
+
+
+	nav#header-nav {
+		text-align: center;
+		float: left;
+		width: 100%;
+		margin-top: 63px;
+		
+
+		  ul#header-menu {
+
+			  	li {
+
+  					font-family: $Montserrat;
+  					font-size: 1.28rem;
+  					text-transform: uppercase;
+  					padding: 0 65px;
+
+  					a:hover {
+						 text-shadow: 1px 1px 9px rgba(168, 168, 92, 0.71);
+  					}
+
+  					
+			  	}
+		  }
+
+
+	}
+
+	#social-nav {
+		margin-top: 46px;
+		text-align: center;
+		float: left;
+		width: 100%;
+		
+		ul#social-menu {
+			
+			li {
+				padding: 0 15px;
+				a {
+					border: 2px solid $white;
+					border-radius: 40px;
+					font-size: 1.7rem;
+					padding: 9px 6px 5px 6px;
+				}
+
+				a:hover {
+					background: rgba(213, 213, 213, 0.28);
+				}
+				.fa-fw {
+
+					vertical-align: middle;
+
+				}
+			}
+
+		}
+		
+	}
+
+}
+
+/*********************
+SLICKNAV MOBILE MENU
+*********************/
+
+
+.slicknav_menu {
+	display:none;
+	background: rgba(76, 76, 76, 0.5);
+}
+
+.slicknav_menu .slicknav_menutxt {
+	display: none;
+}
+
+.slicknav_menu .slicknav_icon {
+  float: left;
+  margin: .188em 0;
+}
+
+.slicknav_nav a {
+	font-family: $Montserrat;
+	font-size: 1.28rem;
+	padding: 10px;
+}
+
+@media screen and (max-width: 1029px) {
+	/* #header-menu is the original menu */
+	.js #header-menu {
+		display:none;
+	}
+	
+	.js .slicknav_menu {
+		 z-index: 9999;
+		display:block;
+	    position: fixed;
+	    width: 100%;
+	    top: 0;
+	}
+}
+
+
+/*********************
+INDEX - FRONT PAGE
+*********************/
+
+#index-content {
+
+	#main {
+		margin-top: -153px;
+
+		section.content {
+			text-align: center;
+			padding-top: 15px;
+			padding-bottom: 15px;
+
+			#intro-content {
+				max-width: 700px;
+				margin: 0 auto;
+
+				h1#intro-title {
+					font-family: $Montserrat;
+					font-size: 1.8rem;
+					text-transform: uppercase;
+				}
+				p#intro-text {
+					font-size: 1.2rem;
+
+				}
+			}
+		}
+
+		section.call-to-action {
+
+			padding-top: 20px;
+
+			.grid-item { 
+					
+  					height: 300px;
+  					background-repeat:no-repeat;
+  					background-size: cover;
+  					background-position: center center;
+  					position: relative;
+
+  					.panel-desc {
+
+  						  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+						  left: 0px;
+						  position: absolute;
+						  top: 0;
+						  z-index: 999;
+						  width: 100%;
+						  height: 100%;
+						  padding: 60px 20px;
+						  color: #fff;
+						  opacity: 0;
+						  overflow: hidden;
+						  text-align: center;
+						  @include soft-transit(.5s);
+
+						  h3 {
+						  	 font-family: $Montserrat;
+						  	 text-transform: uppercase;
+						  }
+						  p {
+						  	font-style: italic;
+						  }
+  					}
+
+  					.panel-desc:hover {
+  						opacity: 1;
+  						cursor: pointer;
+  						@include soft-transit(.5s);
+
+  					}
+  					
+
+			}
+		}
+
+
+	}
+
+	
+}
+
+
+
+
+/*******************************************************************************
+				SLIDER
+*******************************************************************************/
+
+
+.slider {
+	width: 100%;
+	height: 180px;	
+	clear: both;
+
+	.slide {
+		width: 100%;
+		height: 100%;
+		background-size:100% 100%;
+		background-position:center;
+		background-repeat:no-repeat;
+	    padding-top: 46px;
+	    padding-left: 40px;
+	}
+
+	.center {
+  		text-align: center;
+	}
+
+	#custom-pager> * { cursor: pointer;  display: inline-table;}
+	#custom-pager { 
+        text-align: center; 
+        width: 100%; 
+        z-index: 500; 
+        position: absolute; 
+        bottom: 0; 
+        overflow: hidden;
+        padding: 10px;
+
+	     #square-pager{
+			height: 13px;
+			width: 13px;
+			background: white;
+			margin: 0 5px;
+		}
+
+		#square-pager.cycle-pager-active { 
+			background: rgb(215, 215, 215);
+			-webkit-transform: rotate(45deg);
+	    	-moz-transform: rotate(45deg);
+	    	-o-transform: rotate(45deg);
+	    	-ms-transform: rotate(45deg);
+	    	transform: rotate(45deg);
+
+		}	
+
+	}
+
+}
+
+
+// Stops slides 'flashing' in queue as the DOM loads the JS - see jcycle FAQ's (http://jquery.malsup.com/cycle2/faq/)
+.slider .slide { display: none }
+.slider .slide.first { display: block }
+
+
+/*********************
+FOOTER
+*********************/
+
+#main-footer {
+
+  background: repeating-linear-gradient(
+  -45deg,
+  rgba(255, 255, 255, 0.05), 
+  rgba(71, 71, 71, 0.09) 2px, 
+  rgba(105, 105, 105, 0.05) 2px, 
+  rgba(255, 255, 255, 0.05) 3px
+	),
+	url('../images/background-foot.jpg');
+
+	
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	min-height: 765px;
+	margin-top: -120px;
+	padding-top: 120px;
+	width: 100%;
+    float: left;
+
+    .footer-columns {
+    	padding-top: 20px;
+    	margin-bottom: 20px;
+
+    	.footer-column {
+    		padding-right: 0;
+
+			.column-intro-row {
+				
+				padding-bottom: 15px;
+
+				h2.column-title {
+					text-align: center;
+					font-family: $Montserrat;
+					text-transform: uppercase;
+					padding-bottom: 20px;
+					border-bottom: 2px solid $white;
+				}
+				p.column-intro {
+					padding: 5px 0 20px;
+					font-size: 1.28rem;
+					font-style: italic;
+					text-align: center;
+					max-width: 364px;
+					margin: 0 auto;
+				}
+	    	}
+
+	        .middle-col {
+	    		padding-right: 0;
+	    		padding-left: 0
+	    	}
+	    	.last-col {
+	    		padding-left: 0;
+	    		
+	    	}
+			// twitter
+	    	#column-content-row1 {
+				padding: 15px 9%;
+				text-align: center;
+				.tweet-time {
+					text-align: right;
+					padding-right: 15px;
+				}
+	    	}
+			//Instag
+	    	#column-content-row2 {
+
+	    		padding-top: 15px;
+				
+				.feed-slide {
+					img {
+						width: 100%;
+						@include soft-transit(.5s);
+					}
+					img:hover {
+						opacity: 0.6;
+						@include soft-transit(.5s);
+					}
+
+				}
+				#feed-slide2 {
+					padding-right: 0;
+					padding-left: 0.70em;
+				}
+	    	}
+			#column-content-row3 {
+				
+				padding-top: 0;
+
+		    	#signup-form {
+		    		padding: 5px 0 20px;
+						font-size: 1.28rem;
+						font-style: italic;
+						text-align: center;
+						max-width: 364px;
+						margin: 0 auto;
+					.button {
+						padding-top: 6px;
+						width: 100%;
+						float: left;
+					}
+		    	}
+			}
+    	}
+    } // end .footer-columns
+
+    #footer-contact {
+			margin: 15px 0 8px 0;
+			padding: 5px 0;
+			border-top: solid 1px white;
+			position: relative;
+
+			.contact-details {
+				width: 100%;
+				float: left;
+				text-align: center;
+				margin-top: 15px;
+				padding-top: 15px;
+				ul.menu {
+					margin: 0 auto;
+					text-align: center;
+					  line-height: 28px;
+
+					li {
+						font-family: $Montserrat;
+						font-size: 0.8rem;
+						a {
+							float: left;
+							.fa {
+								padding: 0 15px;
+							}
+						}
+					}
+					li:not(:last-child):after {
+					  content: "|";
+					  font-style: normal;
+					  font-weight: normal;
+					  font-size: 15px;
+					  padding: 0 15px;
+					  color: $white;
+				}
+			}
+			
+		}
+
+		.footer-logo {
+			text-align: center;
+			margin-top: 20px;
+		}
+	}
+
+	#footer-contact:before {
+			content: '';
+			border-bottom: solid 1px white;
+			width: 100%;
+			position: absolute;
+			top: 2px;
+			left: 0;
+	
+    
+	}
+}
+
+

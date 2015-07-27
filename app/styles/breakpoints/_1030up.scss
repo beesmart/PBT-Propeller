@@ -1,0 +1,79 @@
+/******************************************************************
+Site Name: PBT
+Author: Stephen C
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+  width: 1018px;
+}
+
+// HEADER
+
+#main-header {
+nav#header-nav {
+
+	border-top: 2px solid $white;
+	border-bottom: 2px solid $white;
+
+		  ul#header-menu {
+
+			  	li {
+
+  				
+  					padding: 0 15px;
+
+  					
+			  	}
+		  }
+
+
+	}
+}
+
+//  SLIDER
+
+.slider {
+	width: 100%;
+	height: 490px;
+	
+}
+
+// FOOTER
+
+#main-footer {
+
+
+    .footer-columns {
+    	
+
+    	.footer-column {
+    		padding-right: 30px;
+    		
+			
+	    	}
+
+	        .middle-col {
+	    		padding-right: 15px;
+	    		padding-left: 15px
+	    	}
+	    	.last-col {
+	    		padding-left: 30px;
+	    		
+	    	}
+	    	#column-content-row1 {
+	    		text-align: left;
+	    	}
+
+	    	#column-content-row3 {
+				
+				padding-top: 20px;
+			}
+	}
+	
+}

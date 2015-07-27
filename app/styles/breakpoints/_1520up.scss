@@ -1,0 +1,41 @@
+/******************************************************************
+Site Name: PBT
+Author: Stephen C
+
+Stylesheet: Super Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on much larger screens.
+
+******************************************************************/
+
+
+.wrap {
+  width: 1520px;
+}
+
+// FOOTER
+
+#main-footer {
+ #footer-contact {
+			
+
+			.contact-details {
+				
+				ul.menu {
+				
+
+					li {
+						
+						font-size: 1rem;
+					}
+					li:not(:last-child):after {
+
+					  padding: 0 25px;
+					
+				}
+			}
+			
+		}
+	}
+}
