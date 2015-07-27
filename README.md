@@ -16,9 +16,9 @@ The site, as above uses Sass and a lot of the responsive styles are bing brought
 ##Jquery, interactions & extras
 The site uses SlickNav for the mobile menu, cycle2 slider, Font awesome for icons. I'm also loading in the twitter widget. There are a number of minor css animations for hover effects but I kept it all pretty light.
 
-http://slicknav.com/
-http://jquery.malsup.com/cycle2/
-http://fortawesome.github.io/Font-Awesome/
+http://slicknav.com/</br>
+http://jquery.malsup.com/cycle2/</br>
+http://fortawesome.github.io/Font-Awesome/</br>
 
 ##Build
 I used yeoman/grunt (http://yeoman.io/) to scaffold the app and grunt build tools to deploy. So the app folder has the relevant scss files while the dist folder, everything's minified. 
