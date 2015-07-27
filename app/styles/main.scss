@@ -1,6 +1,19 @@
 // bower:scss
 // endbower
 
+/******************************************************************
+Site Name: PBT
+Author: Stephen C
+
+Stylesheet: Main.scss
+
+This stylesheet brings in all the scss templates. It also houses styles
+applied generally over the site e.g. buttons, forms etc. It also loads
+the relevant responsive stylesheets - lower down.
+
+******************************************************************/
+
+
 /*********************
 IMPORT ASSETS & GRID
 *********************/
@@ -8,10 +21,24 @@ IMPORT ASSETS & GRID
 @import "template/grid";
 @import "template/colours";
 @import "template/fonts";
+@import "template/mixins";
+@import "slicknav";
 
 /*********************
 BODY
 *********************/
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
 
 body {
   background: $black;
@@ -20,6 +47,148 @@ body {
   font-size: 100%;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  display: block;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#container, .container {
+  display: block;
+}
+
+#main {
+  background: $white;
+  color: $black;
+}
+
+.content {
+  padding: 1.5em 1.5em 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+      display: block;
+      color: $link-colour;
+      text-decoration: none;
+    
+
+
+      &:hover, &:focus {
+        color: $link-hover;
+      }
+    }
+
+
+.menu {
+      display: inline-table;
+      width: auto;
+
+    li {
+      float: left;
+        position: relative;
+        a {
+          color: $white;
+          @include soft-transit(.5s)
+        }
+        a:hover, a:focus {
+          color: darken($white, 15%);
+
+          @include soft-transit(.5s)
+        }
+      }
+  }
+
+.button {
+    text-align: center;
+    margin: 10px auto;
+    span, button {
+        border: 1px solid $white;
+        padding: 10px 95px;
+        border-radius: 5px;
+        font-family: $Montserrat;
+        font-size: 1rem;
+        text-transform: uppercase;
+        background: transparent;
+        color: $white;
+        @include soft-transit(.5s)
+    }
+    span:hover, button:hover {
+      cursor: pointer;
+      background: rgba(255, 255, 0, 0.06);
+      @include soft-transit(.5s)
+    }
+}
+
+
+.form-field {
+  width: 100%;
+  float: left;
+  border: 1px solid $white;
+  padding: 8px 15px;
+  margin: 7px 0;
+  label {
+    text-align: center;
+    float: left;
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 5px;
+
+  }
+ 
+  input {
+
+    float: left;
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    color: white;
+    padding: 8px 5px 0 5px;
+    font-size: 1rem;
+  }
+  input:focus, select:focus {
+   
+  outline: transparent auto 5px;
+  
+  }
+
+  select {
+    background: transparent;
+    border: none;
+    color: white; 
+    font-size: 1rem;
+    padding-left: 14px;
+    font-style: italic;
+    line-height: 1;
+    border: 0;
+    border-radius: 1px;
+    height: 34px;
+    background: rgba(221, 221, 221, 0.24);
+    background-position-x: 244px;
+
+
+    option {
+    
+      color: black;
+      font-style: normal;
+    }
+  }
+
+   .label-divide {
+    display: none;
+    float: left;
+    width: 3%;
+    padding: 5px 5px 0;
+    font-style: normal;
+  }
 }
 
 /*********************
@@ -36,6 +205,11 @@ DEFAULT - ALL DEVICES
 *********************/
 
  @import "breakpoints/base";
+
+
+/*********************************************
+OVERIDES OR GENERAL CUSTOM RESPONSIVE QUERIES
+**********************************************/
 
 
 /*********************
@@ -71,9 +245,20 @@ DESKTOP
 /*********************
 LARGE VIEWING SIZE
 *********************/
+
+
 @media only screen and (min-width: 1240px) {
 
   // styles in 1240up.scss
   @import "breakpoints/1240up";
 
 } // end of media query
+
+
+@include desk-1520 {
+  // styles in 1520up.scss
+  @import "breakpoints/1520up";
+}
+
+
+
